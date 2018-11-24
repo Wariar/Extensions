@@ -40,7 +40,6 @@ public static void InterpTo(this  Transform  transform, Vector3 destination, flo
 ```
 
 ## Usage
-MoveToX:
 ```cs
 [SerializeField] AnimationCurve curve;
 [SerializeField] float distanceToMoveX = 10.0f;
@@ -48,5 +47,69 @@ MoveToX:
 
 StartCoroutine(transform.MoveToX(distanceToMoveX,  time));
 StartCoroutine(transform.MoveToX(distanceToMoveX,  time, curve));
+----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] float distanceToMoveY = 10.0f;
+[SerializeField] float time = 3.0f;
+
+StartCoroutine(transform.MoveToY(distanceToMoveY,  time));
+StartCoroutine(transform.MoveToY(distanceToMoveY,  time, curve));
+----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] float distanceToMoveY = 10.0f;
+[SerializeField] float time = 3.0f;
+
+StartCoroutine(transform.MoveToZ(distanceToMoveZ,  time));
+StartCoroutine(transform.MoveToZ(distanceToMoveZ,  time, curve));
+----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] Transform destination;
+[SerializeField] float time = 3.0f;
+
+StartCoroutine(transform.MoveTo(destination, time));
+StartCoroutine(transform.MoveTo(destination, time, curve));
+-----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] Vector3 destination;
+[SerializeField] float speed = 1.0f;
+
+StartCoroutine(transform.PingPong(destination, speed));
+StartCoroutine(transform.PingPong(destination, speed, curve));
+-----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] float distanceToMoveX = 10;
+[SerializeField] float speed = 1.0f;
+
+StartCoroutine(transform.PingPongX(distanceToMoveX, speed));
+StartCoroutine(transform.PingPongX(distanceToMoveX, speed, curve));
+-----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] float distanceToMoveY = 10;
+[SerializeField] float speed = 1.0f;
+
+StartCoroutine(transform.PingPongY(distanceToMoveY, speed));
+StartCoroutine(transform.PingPongY(distanceToMoveY, speed, curve));
+-----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] float distanceToMoveZ = 10;
+[SerializeField] float speed = 1.0f;
+
+StartCoroutine(transform.PingPongZ(distanceToMoveZ, speed));
+StartCoroutine(transform.PingPongZ(distanceToMoveZ, speed, curve));
+-----------------------------------------------
+
+[SerializeField] Vector3 destination;
+[SerializeField] float interpSpeed = 0.25f;
+
+StartCoroutine(transform.InterpTo(destination, interpSpeed));
+StartCoroutine(transform.InterpTo(destination, interpSpeed, isLocal:true));
+-----------------------------------------------
 ``` 
 
