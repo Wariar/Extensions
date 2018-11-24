@@ -1,6 +1,7 @@
 # Extensions
-Some helpful Unity component extensions
 
-#Transfrom Extensions
+# Transfrom Extensions
+> Below are the transform extensions available:
+> > 1. MoveTo
 
-#UI Extensions
+# UI Extensions
