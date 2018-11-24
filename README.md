@@ -1,6 +1,7 @@
 # Extensions
+Extensions are helpful to improve development time and code readability. Below are some useful ones.
 ## Transfrom Extensions
-Below are the transform extensions available:
+
 1. **MoveToX**: Moves the transform **x** units in X axis in **t** time. 
  ``` cs
 public static IEnumerator MoveToX(this Transform transform, float distanceToMoveinX, float time, AnimationCurve curve = null)
@@ -33,14 +34,12 @@ public static IEnumerator PingPongY(this Transform  transform, float distanceToM
  ``` cs
 public static IEnumerator PingPongZ(this Transform  transform, float distanceToMoveZ, float speed, AnimationCurve  curve = null)
 ```
-> Usage: 
 10. **InterpTo**: Interpolates from **current position** to **destination** at the given **speed**. **isLocal** boolean checks if interpolating local or world position. 
  ``` cs
 public static void InterpTo(this  Transform  transform, Vector3 destination, float interpSpeed, bool isLocal = false)
 ```
 
-### Usage
-
+## Usage
 MoveToX:
 ```cs
 [SerializeField] AnimationCurve curve;
