@@ -247,7 +247,7 @@ namespace Extenstions
         /// <param name="distanceToMoveZ">Distance z.</param>
         /// <param name="curve">Curve.</param>
         /// <param name="speed">Speed.</param>
-        public static IEnumerator PingPongZ(this Transform transform, float distanceToMoveZ, AnimationCurve curve, float speed)
+        public static IEnumerator PingPongZ(this Transform transform, float distanceToMoveZ, float speed, AnimationCurve curve = null)
         {
             float z = transform.position.z;
             float dz = z + distanceToMoveZ;
@@ -271,12 +271,12 @@ namespace Extenstions
         /// <param name="interopSpeed">Interop speed.</param>
         /// <param name="isLocal">If set to <c>true</c> is local.</param>
 
-        public static void InteropTo(this Transform transform, Vector3 to, float interopSpeed, bool isLocal = false)
+        public static void InterpTo(this Transform transform, Vector3 destination, float interpSpeed, bool isLocal = false)
         {
             Vector3 tp = isLocal ? transform.localPosition : transform.position;
-            Vector3 diff = to - tp;
-            interopSpeed = Mathf.Clamp01(interopSpeed);
-            Vector3 d = tp + diff * Time.deltaTime * interopSpeed;
+            Vector3 diff = destination - tp;
+            interpSpeed = Mathf.Clamp01(interpSpeed);
+            Vector3 d = tp + diff * Time.deltaTime * interpSpeed;
             if (isLocal) transform.localPosition = d;
             else transform.position = d;
         }   
