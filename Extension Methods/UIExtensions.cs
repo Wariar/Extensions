@@ -24,26 +24,29 @@ namespace Extenstions
         /// <param name="to">To.</param>
         /// <param name="time">Time.</param>
         /// <param name="curve">Curve.</param>
-        public static IEnumerator Fade(this Image image, Color to, float time, AnimationCurve curve = null)
+        public static IEnumerator LerpColor(this Image image, Color to, float time, AnimationCurve curve = null)
         {
             float dr = to.r - image.color.r;
             float dg = to.g - image.color.g;
             float db = to.b - image.color.b;
+            float da = to.a - image.color.a;
 
             float cr = image.color.r;
             float cg = image.color.g;
             float cb = image.color.b;
-
-            float dt = 0f;
+            float ca = image.color.a;
+                
+            float dt = 0f;  
 
             while (dt < time)
             {
                 dt += Time.deltaTime;
                 float? e = curve?.Evaluate(dt / time) ?? dt/time;
-                float r = Mathf.Abs(cr + (dr * e.Value));
-                float g = Mathf.Abs(cg + (dg * e.Value));
-                float b = Mathf.Abs(cb + (db * e.Value));
-                image.color = new Color(r, g, b);
+                float r = cr + (dr * e.Value);
+                float g = cg + (dg * e.Value);
+                float b = cb + (db * e.Value);
+                float a = ca + (da * e.Value);
+                image.color = new Color(r, g, b, a);
                 yield return null;
             }
             image.color = to;
