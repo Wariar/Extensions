@@ -276,7 +276,7 @@ namespace Extenstions
             Vector3 tp = isLocal ? transform.localPosition : transform.position;
             Vector3 diff = destination - tp;
             interpSpeed = Mathf.Clamp01(interpSpeed);
-            Vector3 d = tp + diff * Time.deltaTime * interpSpeed;
+            Vector3 d = tp + diff * interpSpeed;
             if (isLocal) transform.localPosition = d;
             else transform.position = d;
         }   
