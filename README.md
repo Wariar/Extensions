@@ -108,8 +108,38 @@ StartCoroutine(transform.PingPongZ(distanceToMoveZ, speed, curve));
 [SerializeField] Vector3 destination;
 [SerializeField] float interpSpeed = 0.25f;
 
-StartCoroutine(transform.InterpTo(destination, interpSpeed));
-StartCoroutine(transform.InterpTo(destination, interpSpeed, isLocal:true));
+transform.InterpTo(destination, interpSpeed * Time.deltaTime));
+transform.InterpTo(destination, interpSpeed * Time.deltaTime, isLocal:true));
 -----------------------------------------------
 ``` 
+
+## UI Extensions - Image
+
+1.  **LerpColor**: Linearly interpolating  current color to destination color in time t.
+```cs
+public static IEnumerator LerpColor(this Image  image,  Color to, float time, AnimationCurve curve  =  null)
+```
+2.  **FadeAlpha**: Fade the image based on the FadeType:  FadeIn / FadeOut. 
+```cs
+public static IEnumerator FadeAlpha(this Image  image,  FadeType type, float time, AnimationCurve curve = null)
+```
+
+## Usage
+
+```cs
+[SerializeField] AnimationCurve curve;
+[SerializeField] float time = 2.0f;
+
+StartCoroutine(attachedImageComponent.LerpColor(Color.red, time));
+StartCoroutine(attachedImageComponent.LerpColor(Color.red, time, curve));
+-----------------------------------------------
+
+[SerializeField] AnimationCurve curve;
+[SerializeField] float time = 2.0f;
+
+StartCoroutine(attachedImageComponent.FadeAlpha(FadeType.FadeIn, time));
+StartCoroutine(attachedImageComponent.FadeAlpha(FadeType.FadeIn, time, curve));
+```
+-----------------------------------------------
+> *Note*: *All the above mentioned functions takes an animation curve as  optional parameter. The curve gives more flexibility and control over how values interpolate.*
 
