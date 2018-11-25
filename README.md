@@ -1,5 +1,8 @@
 # Extensions
 Extensions are helpful to improve development time and code readability. Below are some useful ones.
+
+[Transform Extensions](https://github.com/Wariar/Extensions/blob/master/Extension%20Methods/TransformExtensions.cs)  
+[UI Extensions](https://github.com/Wariar/Extensions/blob/master/Extension%20Methods/UIExtensions.cs)
 ## Transfrom Extensions
 
 1. **MoveToX**: Moves the transform **x** units in X axis in **t** time. 
@@ -142,4 +145,7 @@ StartCoroutine(attachedImageComponent.FadeAlpha(FadeType.FadeIn, time, curve));
 ```
 -----------------------------------------------
 > *Note*: *All the above mentioned functions takes an animation curve as  optional parameter. The curve gives more flexibility and control over how values interpolate.*
+
+# Development
+> This repo is under development. New extension methods and updates will be added soon.
 
