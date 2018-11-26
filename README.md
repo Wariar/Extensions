@@ -149,3 +149,6 @@ StartCoroutine(attachedImageComponent.FadeAlpha(FadeType.FadeIn, time, curve));
 # Development
 > This repo is under development. New extension methods and updates will be added soon.
 
+# License
+This project is licensed under [MIT License](https://mit-license.org).
+
