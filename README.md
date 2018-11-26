@@ -150,5 +150,5 @@ StartCoroutine(attachedImageComponent.FadeAlpha(FadeType.FadeIn, time, curve));
 > This repo is under development. New extension methods and updates will be added soon.
 
 # License
-This project is licensed under [MIT License](https://mit-license.org).
+This project is licensed under [MIT License](https://github.com/Wariar/Extensions/blob/master/LICENSE).
 
